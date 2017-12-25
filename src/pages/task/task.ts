@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { Controller } from '../../providers/controller';
+
 @Component({
   selector: 'page-task',
   templateUrl: 'task.html',
@@ -30,8 +32,11 @@ export class TaskPage {
 
   //save datas of Task
   private save(): void {
+    let controller: Controller = Controller.getInstance();
     if (this.modeCreate) {
-      
+      controller.createTask(this.name, this.progress, this.note, this.difficultyLevel, new Date()).then((res) => {
+        alert(res);
+      });
     } else {
 
     }
