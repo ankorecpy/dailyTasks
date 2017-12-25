@@ -3,6 +3,10 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { SQLite } from '@ionic-native/sqlite';
+
+import { DayDao } from '../providers/dataBase/day-dao';
+import { TaskDao } from '../providers/dataBase/task-dao';
 
 import { MyApp } from './app.component';
 
@@ -34,7 +38,11 @@ import { TaskPage } from '../pages/task/task';
   providers: [
     StatusBar,
     SplashScreen,
+    SQLite,
+    TaskDao,
+    DayDao,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}
+
