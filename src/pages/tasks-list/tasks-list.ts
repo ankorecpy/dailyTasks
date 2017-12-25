@@ -31,7 +31,7 @@ export class TasksListPage implements Observer {
   }
 
   //send to TaskPage with a activated creation flag and empty datas
-  private goToCreeateTask(): void {
+  private goToCreateTask(): void {
     this.navCtrl.push(TaskPage, { name: "", progress: "0", difficulty: 1, note: "", mode: true });
   }
 
